@@ -4,6 +4,8 @@ const express = require('express')
 
 require('dotenv').config()
 
+const { dbConnection } = require('./database/config')
+
 //crear express app
 
 const app = express();
@@ -14,6 +16,9 @@ const app = express();
 //         ok: true
 //     })
 // } )
+
+//base de datos
+dbConnection();
 
 app.use( express.static('public'))
 
