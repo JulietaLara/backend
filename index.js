@@ -41,3 +41,8 @@ app.use('/api/task', require('./routes/task'))
 app.listen(process.env.PORT, () => {
     console.log('Servidor corriendo en puerto', process.env.PORT)
 })
+
+const Server = require('./server/server');
+
+const myServer = new Server(); 
+myServer.listen(); 
