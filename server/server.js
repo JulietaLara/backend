@@ -49,24 +49,7 @@ class Server {
         })
     }
 
-    sockets() {
-        this.io.on('connection', socket => {
-            console.log('Cliente conectado', socket.id);
-
-            socket.on('mensaje-de-cliente', ( payload, callback ) => {
-                console.log( payload );
-
-                callback('Mensaje recibido');
-
-                payload.from = 'desde el server'
-                this.io.emit('mensaje del server', payload); 
-            })
-
-            socket.on( 'disconnect', () => {
-                console.log('Cliente desconectado')
-            })
-        })
-    }
+    
 }
 
 module.exports = Server; 
